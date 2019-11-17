@@ -29,7 +29,7 @@ public class DonateBlood extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.donor_layout);
         mAuth = FirebaseAuth.getInstance();
-        databaseReference = FirebaseDatabase.getInstance().getReference("donors");
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("Donors");
 
         editText_name = (EditText) findViewById(R.id.editText2);
         save_button = (Button) findViewById(R.id.button2);
