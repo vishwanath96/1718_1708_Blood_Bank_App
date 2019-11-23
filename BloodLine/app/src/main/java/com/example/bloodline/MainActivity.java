@@ -22,7 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class MainActivity extends AppCompatActivity {
 
     private Button btnChangeEmail, btnChangePassword, btnSendResetEmail, btnRemoveUser,
-            changeEmail, changePassword, sendEmail, remove, signOut, donate;
+            changeEmail, changePassword, sendEmail, remove, signOut, donate, request_blood;
 
     private EditText oldEmail, newEmail, password, newPassword;
     private ProgressBar progressBar;
@@ -65,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
         signOut = (Button) findViewById(R.id.sign_out);
 
         donate = (Button) findViewById(R.id.donate_blood);
+        request_blood = (Button) findViewById(R.id.request_blood);
 
         oldEmail = (EditText) findViewById(R.id.old_email);
         newEmail = (EditText) findViewById(R.id.new_email);
@@ -245,6 +246,15 @@ public class MainActivity extends AppCompatActivity {
                                       @Override
                                       public void onClick(View view) {
                                           Intent i=new Intent(MainActivity.this,DonateBlood.class);
+                                          startActivity(i);
+                                      }
+                                  }
+        );
+
+        request_blood.setOnClickListener(new View.OnClickListener() {
+                                      @Override
+                                      public void onClick(View view) {
+                                          Intent i=new Intent(MainActivity.this,RequestBlood.class);
                                           startActivity(i);
                                       }
                                   }

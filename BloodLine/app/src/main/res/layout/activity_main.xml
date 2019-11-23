@@ -166,6 +166,15 @@
             android:text="Donate Blood"
             android:textStyle="bold" />
 
+        <Button
+            android:id="@+id/request_blood"
+            style="?android:textAppearanceSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Request Blood"
+            android:textStyle="bold" />
+
     </LinearLayout>
 
 

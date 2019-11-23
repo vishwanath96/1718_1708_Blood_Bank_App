@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "753260690571-0n6d224245k86vfi4urhsl6t6hf0urt1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.bloodline",
+            "certificate_hash": "0b986fd7a04f71159a48468665e59d12b2757c19"
+          }
+        },
+        {
           "client_id": "753260690571-ffmv0db9e5p7ttuc4npo09m8bkrqjnea.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

@@ -27,13 +27,10 @@ import java.util.List;
 public class DonateBlood extends AppCompatActivity {
 
     DatabaseReference databaseReference;
-    EditText editText_name;
+    EditText editText_name,editText_age,editText_city,editText_contact;
     Button save_button;
-    Spinner spinnerBloodGroup;
+    Spinner spinnerBloodGroup,spinnerGender;
     private FirebaseAuth mAuth;
-
-    ListView listViewDonors;
-    List<UserInformation> userInformationList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,11 +40,12 @@ public class DonateBlood extends AppCompatActivity {
         databaseReference = FirebaseDatabase.getInstance().getReference().child("Donors");
 
         editText_name = (EditText) findViewById(R.id.editText2);
+        editText_age = (EditText) findViewById(R.id.age);
+        editText_city = (EditText) findViewById(R.id.city);
+        editText_contact = (EditText) findViewById(R.id.contact);
         save_button = (Button) findViewById(R.id.button2);
         spinnerBloodGroup = (Spinner) findViewById(R.id.spinner);
-
-        listViewDonors = (ListView) findViewById(R.id.listViewDonors);
-        userInformationList = new ArrayList<>();
+        spinnerGender = (Spinner) findViewById(R.id.gender);
 
         save_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,39 +56,21 @@ public class DonateBlood extends AppCompatActivity {
 
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-
-        databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                userInformationList.clear();
-                for (DataSnapshot donorSnapshot: dataSnapshot.getChildren()){
-                    UserInformation userInformation = donorSnapshot.getValue(UserInformation.class);
-                    userInformationList.add(userInformation);
-                }
-                DonorList adapter = new DonorList(DonateBlood.this,userInformationList);
-                listViewDonors.setAdapter(adapter);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-    }
 
     public void saveInfo() {
         String name1 = editText_name.getText().toString().trim();
+        String age = editText_age.getText().toString().trim();
+        String city = editText_city.getText().toString().trim();
+        String contact = editText_contact.getText().toString().trim();
         String bloodGroup = spinnerBloodGroup.getSelectedItem().toString();
+        String gender = spinnerGender.getSelectedItem().toString();
         FirebaseUser user =  mAuth.getCurrentUser();
         String userId = user.getUid();
         String email = user.getEmail();
 
         if(!TextUtils.isEmpty(name1)){
             String id = databaseReference.push().getKey();
-            UserInformation userInformation = new UserInformation(id, name1, bloodGroup);
+            UserInformation userInformation = new UserInformation(id, name1, bloodGroup, age, gender, city, contact);
             databaseReference.child(id).setValue(userInformation);
             Toast.makeText(this,"Donor added successfully",Toast.LENGTH_LONG).show();
         }else {

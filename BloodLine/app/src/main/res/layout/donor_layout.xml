@@ -16,13 +16,50 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="40dp"
             android:hint="Enter name"/>
+
+        <EditText
+            android:id="@+id/age"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number"
+            android:layout_marginBottom="40dp"
+            android:hint="Enter Age"/>
+
+        <Spinner
+            android:id="@+id/gender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp"
+            android:entries="@array/gender" />
 
         <Spinner
             android:id="@+id/spinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp"
             android:entries="@array/bloodGroup" />
+
+        <EditText
+            android:id="@+id/contact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="phone"
+            android:layout_marginBottom="40dp"
+            android:hint="Enter Contact"/>
+
+        <EditText
+            android:id="@+id/city"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="text"
+            android:layout_marginBottom="40dp"
+            android:hint="Enter City"/>
 
         <Button
             android:id="@+id/button2"
@@ -30,10 +67,6 @@
             android:layout_height="wrap_content"
             android:text="SAve" />
 
-        <ListView
-            android:id="@+id/listViewDonors"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
     </LinearLayout>
 
 </RelativeLayout>
