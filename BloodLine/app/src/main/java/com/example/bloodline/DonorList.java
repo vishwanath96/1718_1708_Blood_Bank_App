@@ -31,11 +31,19 @@ public class DonorList extends ArrayAdapter<UserInformation> {
         View listViewItem = inflater.inflate(R.layout.list_layout,null,true);
         TextView textViewName = (TextView) listViewItem.findViewById(R.id.textViewName);
         TextView textViewBloodGroup = (TextView) listViewItem.findViewById(R.id.textViewBloodGroup);
+        TextView textViewAge = (TextView) listViewItem.findViewById(R.id.textViewAge);
+        TextView textViewGender = (TextView) listViewItem.findViewById(R.id.textViewGender);
+        TextView textViewCity = (TextView) listViewItem.findViewById(R.id.textViewCity);
+        TextView textViewContact = (TextView) listViewItem.findViewById(R.id.textViewContact);
 
         UserInformation userInformation = userInformationList.get(position);
 
         textViewName.setText(userInformation.getName());
         textViewBloodGroup.setText(userInformation.getDonor_bloodGroup());
+        textViewAge.setText(userInformation.getAge());
+        textViewGender.setText(userInformation.getGender());
+        textViewCity.setText(userInformation.getCity());
+        textViewContact.setText(userInformation.getContact());
         return listViewItem;
     }
 }

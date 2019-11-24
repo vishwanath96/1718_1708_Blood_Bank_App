@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -22,12 +23,13 @@ import com.google.firebase.database.FirebaseDatabase;
 public class MainActivity extends AppCompatActivity {
 
     private Button btnChangeEmail, btnChangePassword, btnSendResetEmail, btnRemoveUser,
-            changeEmail, changePassword, sendEmail, remove, signOut, donate, request_blood;
+            changeEmail, changePassword, sendEmail, remove, signOut, home;
 
     private EditText oldEmail, newEmail, password, newPassword;
     private ProgressBar progressBar;
     private FirebaseAuth.AuthStateListener authListener;
     private FirebaseAuth auth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,8 +66,7 @@ public class MainActivity extends AppCompatActivity {
         remove = (Button) findViewById(R.id.remove);
         signOut = (Button) findViewById(R.id.sign_out);
 
-        donate = (Button) findViewById(R.id.donate_blood);
-        request_blood = (Button) findViewById(R.id.request_blood);
+        home = (Button) findViewById(R.id.home);
 
         oldEmail = (EditText) findViewById(R.id.old_email);
         newEmail = (EditText) findViewById(R.id.new_email);
@@ -126,6 +127,16 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+
+        home.setOnClickListener(new View.OnClickListener() {
+                                      @Override
+                                      public void onClick(View view) {
+                                          Intent i=new Intent(MainActivity.this,HomeActivity.class);
+                                          startActivity(i);
+                                      }
+                                  }
+        );
 
         btnChangePassword.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -242,23 +253,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        donate.setOnClickListener(new View.OnClickListener() {
-                                      @Override
-                                      public void onClick(View view) {
-                                          Intent i=new Intent(MainActivity.this,DonateBlood.class);
-                                          startActivity(i);
-                                      }
-                                  }
-        );
-
-        request_blood.setOnClickListener(new View.OnClickListener() {
-                                      @Override
-                                      public void onClick(View view) {
-                                          Intent i=new Intent(MainActivity.this,RequestBlood.class);
-                                          startActivity(i);
-                                      }
-                                  }
-        );
     }
 
     //sign out method

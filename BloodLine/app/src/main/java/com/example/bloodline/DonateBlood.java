@@ -28,7 +28,7 @@ public class DonateBlood extends AppCompatActivity {
 
     DatabaseReference databaseReference;
     EditText editText_name,editText_age,editText_city,editText_contact;
-    Button save_button;
+    Button save_button, acc;
     Spinner spinnerBloodGroup,spinnerGender;
     private FirebaseAuth mAuth;
 
@@ -46,6 +46,16 @@ public class DonateBlood extends AppCompatActivity {
         save_button = (Button) findViewById(R.id.button2);
         spinnerBloodGroup = (Spinner) findViewById(R.id.spinner);
         spinnerGender = (Spinner) findViewById(R.id.gender);
+
+        acc = (Button) findViewById(R.id.account);
+        acc.setOnClickListener(new View.OnClickListener() {
+                                   @Override
+                                   public void onClick(View view) {
+                                       Intent i=new Intent(DonateBlood.this,MainActivity.class);
+                                       startActivity(i);
+                                   }
+                               }
+        );
 
         save_button.setOnClickListener(new View.OnClickListener() {
             @Override
