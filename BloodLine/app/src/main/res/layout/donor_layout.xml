@@ -29,33 +29,33 @@
             android:id="@+id/editText2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="15dp"
             android:layout_marginBottom="40dp"
-            android:hint="Enter name"/>
+            android:ems="10"
+            android:hint="Enter name"
+            android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/age"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
             android:ems="10"
-            android:inputType="number"
-            android:layout_marginBottom="40dp"
-            android:hint="Enter Age"/>
+            android:hint="Enter Age"
+            android:inputType="number" />
 
         <Spinner
             android:id="@+id/gender"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="40dp"
+            android:layout_height="42dp"
+            android:layout_marginBottom="30dp"
             android:entries="@array/gender" />
 
         <Spinner
             android:id="@+id/spinner"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="40dp"
+            android:layout_height="47dp"
+            android:layout_marginBottom="35dp"
             android:entries="@array/bloodGroup" />
 
         <EditText
@@ -64,7 +64,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="phone"
-            android:layout_marginBottom="40dp"
+            android:layout_marginBottom="35dp"
             android:hint="Enter Contact"/>
 
         <EditText
@@ -73,14 +73,17 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="text"
-            android:layout_marginBottom="40dp"
+            android:layout_marginBottom="35dp"
             android:hint="Enter City"/>
 
         <Button
             android:id="@+id/button2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Save" />
+            android:background="@color/btn_logut_bg"
+            android:text="Save"
+            android:textColor="@color/white"
+            android:textSize="24sp" />
 
     </LinearLayout>
 
